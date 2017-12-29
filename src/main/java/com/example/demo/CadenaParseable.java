@@ -65,11 +65,11 @@ public static List<String> buscarSecuenciasConSigno(String cadena) {
 	
 	}
 
-public static ArrayList<String> buscarSecuencias(String cadena) {
+public static List<String> buscarSecuencias(String cadena) {
 	
 	boolean enteroEncontrado = false;
 	String aux = new String();
-	ArrayList <String> listaNumeros = new ArrayList<>();
+	List <String> listaNumeros = new ArrayList<>();
 	
 
 	for (int i = 0; i<cadena.length(); i++) {			
