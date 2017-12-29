@@ -39,14 +39,15 @@ public static List<String> buscarSecuenciasConSigno(String cadena) {
 					}				
 			}
 			//comienza secuencia sin signo
-			else if (esParseable(String.valueOf(cadena.charAt(i)))) { 					
-					aux+=String.valueOf(cadena.charAt(i));	
-					enteroEncontrado=true;
+			else if (esParseable(String.valueOf(cadena.charAt(i)))) {
+				aux+=String.valueOf(cadena.charAt(i));
+				enteroEncontrado=true;
 			}
 			
 			//finaliza secuencia
 			if(i<cadena.length()-1)
 			if (enteroEncontrado&&!esParseable(String.valueOf(cadena.charAt(i+1)))) {
+			
 				listaNumeros.add(aux);
 				aux="";
 				enteroEncontrado = false;
