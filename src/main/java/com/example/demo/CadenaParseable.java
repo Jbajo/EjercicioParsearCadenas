@@ -15,7 +15,7 @@ public class CadenaParseable {
 		}
 		}
 	
-public static List<String> buscarSecuenciasConSigno(String cadena) {
+	public static List<String> buscarSecuenciasConSigno(String cadena) {
 		
 		boolean enteroEncontrado = false;
 		String aux = new String();
@@ -47,7 +47,6 @@ public static List<String> buscarSecuenciasConSigno(String cadena) {
 			//finaliza secuencia
 			if(i<cadena.length()-1)
 			if (enteroEncontrado&&!esParseable(String.valueOf(cadena.charAt(i+1)))) {
-			
 				listaNumeros.add(aux);
 				aux="";
 				enteroEncontrado = false;
@@ -66,46 +65,46 @@ public static List<String> buscarSecuenciasConSigno(String cadena) {
 	
 	}
 
-public static List<String> buscarSecuencias(String cadena) {
+	public static List<String> buscarSecuencias(String cadena) {
 	
-	boolean enteroEncontrado = false;
-	String aux = new String();
-	List <String> listaNumeros = new ArrayList<>();
-	
-
-	for (int i = 0; i<cadena.length(); i++) {			
+		boolean enteroEncontrado = false;
+		String aux = new String();
+		List <String> listaNumeros = new ArrayList<>();
 		
-		//comienza secuencia
-		if(esParseable(String.valueOf(cadena.charAt(i)))) {
-			enteroEncontrado = true;
-			aux += String.valueOf(cadena.charAt(i));					
+	
+		for (int i = 0; i<cadena.length(); i++) {			
+			
+			//comienza secuencia
+			if(esParseable(String.valueOf(cadena.charAt(i)))) {
+				enteroEncontrado = true;
+				aux += String.valueOf(cadena.charAt(i));					
+				
+			}
+			
+			//fin de secuencia
+			else if (enteroEncontrado) {
+				
+				enteroEncontrado=false;
+				listaNumeros.add(aux);
+				aux= "";
+				
+				
+			}
+			
+			//secuencia al final de la cadena
+			if (enteroEncontrado && i == cadena.length()-1) {
+				System.out.println(aux);
+				enteroEncontrado=false;
+				listaNumeros.add(aux);
+				aux= "";
+				
+			}		
 			
 		}
-		
-		//fin de secuencia
-		else if (enteroEncontrado) {
-			
-			enteroEncontrado=false;
-			listaNumeros.add(aux);
-			aux= "";
-			
-			
-		}
-		
-		//secuencia al final de la cadena
-		if (enteroEncontrado && i == cadena.length()-1) {
-			System.out.println(aux);
-			enteroEncontrado=false;
-			listaNumeros.add(aux);
-			aux= "";
-			
-		}		
-		
+	
+		return listaNumeros;
+	
 	}
-
-return listaNumeros;
-
-}
 	
 	
 }
