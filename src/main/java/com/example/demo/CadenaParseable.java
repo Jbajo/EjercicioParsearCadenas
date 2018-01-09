@@ -93,7 +93,6 @@ public class CadenaParseable {
 			
 			//secuencia al final de la cadena
 			if (enteroEncontrado && i == cadena.length()-1) {
-				System.out.println(aux);
 				enteroEncontrado=false;
 				listaNumeros.add(aux.toString());
 				aux.delete(0, aux.length());
